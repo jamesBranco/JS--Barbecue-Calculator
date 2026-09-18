@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #91def1, #3063dc);
+    background: linear-gradient(120deg, #91def1, #3063dc) fixed;
     color: #333;
 }
 
@@ -16,6 +21,7 @@ header {
 header h1 {
     font-size: 2rem;
     color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .container {
@@ -29,39 +35,50 @@ header h1 {
 }
 
 .container p {
-    margin-bottom: 20px;
+    margin: 0 0 20px;
     font-size: 1rem;
     color: #666;
 }
 
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.85rem;
+    color: #555;
+}
+
 input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 4px 0 6px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    font: inherit;
     transition: all 0.3s;
 }
 
 input:focus {
-    border-color: #ff9a9e;
+    border-color: #3063dc;
     outline: none;
-    box-shadow: 0 0 5px rgba(255, 154, 158, 0.5);
+    box-shadow: 0 0 5px rgba(48, 99, 220, 0.5);
 }
 
 button {
+    margin-top: 10px;
     background: #3063dc;
     color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
-    font-size: 1rem;
+    font: inherit;
     cursor: pointer;
     transition: all 0.3s;
 }
 
-button:hover {
-    background: #fad0c4;
+button:hover,
+button:focus-visible {
+    background: #244fb3;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -70,19 +87,16 @@ button:hover {
     font-size: 1rem;
 }
 
+#result p {
+    margin: 0 0 8px;
+    color: #333;
+}
+
 footer {
     text-align: center;
     margin-top: 20px;
+    padding-bottom: 20px;
     color: #fff;
     font-size: 0.9rem;
-}
-
-/* FIXED (removed comma) */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
